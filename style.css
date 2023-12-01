@@ -8,8 +8,16 @@ body{
     position: relative;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Absolute Positioned Elements */
 .offer{
-    position: absolute;
+    position: fixed;
     top: 40%;
     left: 0;
     border-radius: 10px;
@@ -25,18 +33,13 @@ body{
     transform: rotate(180deg);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-}
+/* -----------------------Header Section----------------------- */
 
 .header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px 120px;
+    padding: 10px 80px;
     gap: 40px;
     border-bottom: 1px solid #e0e2e4ff;
 }
@@ -122,9 +125,6 @@ body{
     gap: 8px;
 }
 
-
-
-
 .header-upper-search__icon,
 .header-upper-right-profile__icon,
 .header-upper-right__cart,
@@ -136,9 +136,11 @@ body{
     width: 20px;
 }
 
+/* -----------------------Hero Section----------------------- */
+
 .hero{
     display: grid;
-    margin: 20px 120px;
+    margin: 20px 80px;
     grid-template-columns: repeat(3,1fr);
     gap: 16px;
     grid-auto-rows: 240px;
@@ -174,16 +176,18 @@ body{
     background-image: url(https://snshealth.com/cdn/shop/files/inner_armour_desk_540x.jpg?v=1699629256);
 }
 
-.category-title{
-    margin: 40px 120px;
-    font-size: 38px;
+/* -----------------------Category Section----------------------- */
+
+.category__title{
+    margin: 40px 80px;
+    font-size: 32px;
     font-weight: 700;
 }
 
 .categories{
     display: flex;
     justify-content: space-between;
-    margin: 0px 120px;
+    margin: 0px 80px;
     align-items: center;
 }
 
@@ -191,6 +195,7 @@ body{
     min-width: 200px;
     min-height: 100px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -215,32 +220,93 @@ body{
     font-weight: 600;
 }
 
+/* -----------------------Diet Section----------------------- */
 
-
-
-
-
-
-
-
-
-
-.category__header {
-    font-size: 32px;
-    font-weight: 600;
-    padding: 40px;
+.diet{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0px 80px;
+    gap: 60px;
 }
 
-.sub-category {
-    margin: 0px 40px;
+.diet__title{
+    margin: 40px 80px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.diet-top{
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.diet-top-item{
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.diet-top-item-image{
+    padding: 40px 40px;
+}
+
+.diet-top-item-image__icon{
+    height: 60px;
+    width: 60px;
+}
+
+.diet-top-item-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 40px 40px;
+}
+
+.diet-top-item-text__top{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.diet-top-item-text__bottom{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.diet-top-item:hover{
+    border: 1px solid var(--accent-color);
+    
+    .diet-top-item-text__top{
+        color: var(--accent-color);
+    }
+
+    .diet-top-item-image{
+        background-color: var(--accent-color);
+    }
+}
+
+/* -----------------------Health Condition Section----------------------- */
+
+.health-condition__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 40px 80px;
+}
+
+.health-condition {
+    
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
     gap: 20px;
-    width: calc(100vw - 80px);
+    margin: 0px 80px;
 }
 
-.sub-category__items {
+.health-condition__items {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -250,18 +316,66 @@ body{
     text-wrap: nowrap;
 }
 
-.sub-category__items img {
+.health-condition__items img {
     width: 30px;
 }
 
-.sub-category__item-title {
+.health-condition__item-title {
     font-size: 16px;
     font-weight: 600;
     padding: 0px 7px;
 }
 
-.sub-category__items:hover {
+.health-condition__items:hover {
     border: 1px solid #e60d0aff;
     cursor: pointer;
     color: #e60d0aff;
+}
+
+/* -----------------------Brands Section----------------------- */
+
+.featured-brands__title{
+    margin: 40px 80px;
+}
+
+.featured-brands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 24px;
+    margin: 0px 80px;
+}
+
+.featured-brands__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 8px 40px;
+}
+
+.featured-brands__item-image{
+    height: 40px;
+    width: 120px;
+}
+
+/* -----------------------Products Section----------------------- */
+
+.featured-products-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 80px;
+}
+
+.featured-products-heading__title{
+    font-size: 32;
+    font-weight: 700;
+}
+
+.featured-products-heading__link{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
 }
